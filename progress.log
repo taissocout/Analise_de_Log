@@ -3,3 +3,4 @@
 [2026-03-12] #0003  Removed dead code  // Ferramenta Completa, interativa e funcinal
 [2026-03-12] #0004  Reviewed setup instructions  // Add project docs: README, gitignore, license, requireme
 [2026-03-12] #0005  Optimised query performance  // Adicionado Read.me completo com tutorial de como usar
+[2026-03-12] #0006  Added edge-case handling  // atualizado o banner
