@@ -5,3 +5,4 @@
 [2026-03-12] #0005  Optimised query performance  // Adicionado Read.me completo com tutorial de como usar
 [2026-03-12] #0006  Added edge-case handling  // atualizado o banner
 [2026-03-12] #0007  Improved error messages  // chore: inicializa estrutura do projeto analise de log
+[2026-03-12] #0008  Added guard clause  // feat: define constantes de nivel de severidade
