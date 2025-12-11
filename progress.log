@@ -7,3 +7,4 @@
 [2026-03-12] #0007  Improved error messages  // chore: inicializa estrutura do projeto analise de log
 [2026-03-12] #0008  Added guard clause  // feat: define constantes de nivel de severidade
 [2026-03-12] #0009  Cleaned up unused imports  // feat: adiciona parser de linha de log com regex
+[2026-03-12] #0010  Added type hints  // feat: implementa filtro por nivel de severidade
