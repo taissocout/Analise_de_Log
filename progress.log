@@ -11,3 +11,4 @@
 [2026-03-12] #0011  Improved variable naming  // feat: adiciona contagem de ocorrencias por tipo
 [2026-03-12] #0012  Added guard clause  // feat: implementa exportacao de relatorio em txt
 [2026-03-12] #0013  Simplified conditional branches  // feat: adiciona modo interativo com menu CLI
+[2026-03-12] #0014  Reviewed setup instructions  // fix: corrige parsing de logs com timestamp ISO 8601
