@@ -235,7 +235,7 @@ def banner():
 ╚══════╝ ╚═════╝  ╚═════╝ ╚══════╝╚══════╝╚═╝  ╚═══╝   ╚═╝   ╚═╝╚═╝  ╚═══╝╚══════╝╚══════╝
 
         LogSentinel - Advanced SOC Log Analyzer
-        Author: Cout | Controlled Lab Use
+        Author:Taisso Cout | Controlled Lab Use
 """)
 
 def ask_yes_no(prompt: str, default: Optional[bool] = None) -> bool:

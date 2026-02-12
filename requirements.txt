@@ -1,1 +1,3 @@
 # no external dependencies
+# LogSentinel uses only Python Standard Library.
+# No external dependencies required.
