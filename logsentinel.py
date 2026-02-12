@@ -26,7 +26,7 @@ from typing import Dict, List, Optional, Tuple
 APACHE_RE = re.compile(
     r'^(?P<ip>\S+)\s+\S+\s+\S+\s+\[(?P<ts>[^\]]+)\]\s+'
     r'"(?P<method>[A-Z]+)\s+(?P<path>\S+)\s+(?P<proto>[^"]+)"\s+'
-    r'(?P<status>\d{3})\s+(?P<size>\S+)\s+'
+    r'(?P<status>\d{3}git)\s+(?P<size>\S+)\s+'
     r'"(?P<referer>[^"]*)"\s+"(?P<ua>[^"]*)"'
 )
 
