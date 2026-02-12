@@ -1,63 +1,185 @@
-# 🛡️ LogSentinel
+# 🛡️ LogSentinel – Advanced SOC Log Analyzer
 
-**LogSentinel** is an **interactive SOC-style Apache access.log analyzer** designed for **controlled labs** (e.g., DESEC training).  
-It identifies the **top source IP by request volume**, extracts an **attack timeline**, detects common **automation/scanning tools via User-Agent**, and generates a **Mini SOC Report** in Markdown.
+LogSentinel is an **interactive Apache access.log analyzer** designed for cybersecurity labs and controlled environments.
 
-> ⚠️ **For educational use in authorized environments only.**
+It simulates a SOC-style investigation by identifying:
 
----
-
-## ✨ Features
-
-- ✅ **Interactive mode (Y/N prompts)**: detects if you already have `access.log` or downloads it
-- ✅ **Download support**: tries `wget`, falls back to **Python urllib** (works on Windows too)
-- ✅ Finds **top IPs** by request count
-- ✅ Extracts **attack window (start/end)** for the top IP
-- ✅ Detects tools by User-Agent (e.g., **Nmap, Nikto, sqlmap, ffuf, Gobuster**)
-- ✅ Calculates **peak requests/min**
-- ✅ Produces:
-  - `SOC_REPORT.md` (Mini SOC report)
-  - `data.json` (raw structured output)
+- 🔍 Top attacking IP
+- ⏱ Attack timeline (start / end)
+- 📈 Peak requests per minute
+- 🛠 Tool detection via User-Agent (Nmap, Nikto, sqlmap, ffuf, Gobuster, etc.)
+- 📄 Automatic SOC-style report generation (Markdown + JSON)
+- 🎮 Interactive terminal UI with animation and status LEDs
 
 ---
 
-## 🖥️ Demo Flow (Interactive)
+## ⚠️ Disclaimer
 
-1) Ask if you already have an `access.log`  
-2) If not, asks for a URL and downloads it  
-3) Asks if you want to analyze immediately  
-4) Generates the report folder automatically
+This tool is intended **only for authorized environments and cybersecurity labs**.
 
----
-
-## ✅ Requirements
-
-- Python 3.x
-- (Optional) `wget` on Linux/Kali — not required on Windows
-
-No external Python dependencies.
+Do NOT use against systems without permission.
 
 ---
 
-## 🚀 Usage
+# 🚀 Installation
 
-### Windows (PowerShell)
-```powershell
-py .\logsentinel.py
-Kali / Linux
+Repository:
+
+https://github.com/taissocout/Analise_de_Log
+
+
+---
+
+# 🐉 Installing on Kali Linux
+
+### 1️⃣ Clone the repository
+
+```bash
+git clone https://github.com/taissocout/Analise_de_Log.git
+2️⃣ Enter the directory
+cd Analise_de_Log
+3️⃣ Run the tool
 python3 logsentinel.py
-⚙️ CLI Mode (Optional)
-Analyze a local file
-python3 logsentinel.py --file access.log --out soc_report --json
-Download and analyze via URL
-python3 logsentinel.py --url "http://example.com/access.log" --out soc_report --json
-📄 Output
-Default output folder: soc_report/
+Optional: Make executable
+chmod +x logsentinel.py
+./logsentinel.py
+🪟 Running on Windows
+Open PowerShell inside the project folder:
 
-soc_report/SOC_REPORT.md
+py .\logsentinel.py
+or
 
-soc_report/data.json
+python .\logsentinel.py
+🧠 Interactive Mode (Default)
+When executed without parameters:
 
-If you used --url, it also stores the downloaded:
+python3 logsentinel.py
+The tool will:
 
-soc_report/access.log
+Ask if you already have an access.log
+
+If not, request a URL
+
+Download using:
+
+wget (if available)
+
+Python fallback (urllib)
+
+Ask if you want to analyze immediately
+
+Generate a report automatically
+
+📂 Output
+By default, results are stored in:
+
+soc_report/
+Generated files:
+
+SOC_REPORT.md
+
+data.json
+
+access.log (if downloaded)
+
+⚙️ CLI Mode (Advanced Usage)
+Analyze local file
+python3 logsentinel.py --file access.log --out report --json
+Download and analyze
+python3 logsentinel.py --url "http://example.com/access.log" --out report --json
+📊 What the Report Includes
+The generated SOC_REPORT.md contains:
+
+Executive Summary
+
+Top IPs by volume
+
+Main IOC
+
+Attack timeline
+
+Tool fingerprinting
+
+HTTP Status breakdown
+
+Most targeted paths
+
+Blue Team recommendations
+
+🎮 Terminal UI Features
+LogSentinel includes:
+
+🕵️ Hooded character animation
+
+🔎 Hunting animation
+
+🟥🟨🟩 Status LEDs (red / yellow / green)
+
+🔄 Live progress spinner
+
+📊 Visual progress bars
+
+Inspired by embedded security devices like Flipper Zero.
+
+📁 Project Structure
+Analise_de_Log/
+├── logsentinel.py
+├── README.md
+├── LICENSE
+├── requirements.txt
+├── .gitignore
+├── examples/
+│   └── access_sample.log
+└── soc_report/   (generated output)
+🔍 Tool Detection (User-Agent Based)
+LogSentinel detects common tools such as:
+
+Nmap
+
+Nikto
+
+sqlmap
+
+Gobuster
+
+ffuf
+
+dirb
+
+masscan
+
+Burp Suite
+
+OWASP ZAP
+
+curl / wget
+
+python-requests
+
+🛠 Requirements
+Python 3.x
+
+(Optional) wget (Linux only)
+
+No external Python libraries required
+
+🧯 Troubleshooting
+Windows says “python3 not found”
+Use:
+
+py .\logsentinel.py
+URL error: unknown url type
+Make sure the URL includes:
+
+http://
+Example:
+
+http://www.example.com/access.log
+📜 License
+MIT License.
+
+👨‍💻 Author
+Taisso Cout
+Cybersecurity Research • Blue Team • Offensive Security Labs
+
+GitHub: https://github.com/taissocout
